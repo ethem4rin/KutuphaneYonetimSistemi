@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kutuphane.controller.MainController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+    <top>
+        <VBox styleClass="top-menu-container" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="50.0" styleClass="top-bar" >
+                <children>
+                    <Label text="Kütüphane Yönetim Sistemi" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                    <Label fx:id="lblUserInfo" text="Giriş Yapan: Yükleniyor..." AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+                </children>
+            </AnchorPane>
+
+            <HBox fx:id="menuHBox" alignment="CENTER_LEFT" spacing="10.0" styleClass="navbar">
+                <padding>
+                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                </padding>
+                <Label text="Yönetim:" styleClass="navbar-label" />
+
+                <Button fx:id="btnUsers" mnemonicParsing="false" onAction="#handleUserManagement" text="Üyeler" styleClass="nav-button" />
+                <Button fx:id="btnBooks" mnemonicParsing="false" onAction="#handleBookManagement" text="Kitaplar" styleClass="nav-button" />
+                <Button fx:id="btnLoans" mnemonicParsing="false" onAction="#handleLoanManagement" text="Ödünç İşlemleri" styleClass="nav-button" />
+
+                <Label text="Diğer:" styleClass="navbar-label">
+                    <HBox.margin><Insets left="20.0" /></HBox.margin>
+                </Label>
+                <Button fx:id="btnReports" mnemonicParsing="false" onAction="#handleReports" text="Raporlar" styleClass="nav-button" />
+                <Button fx:id="btnProfile" mnemonicParsing="false" onAction="#handleProfileEdit" text="Profil" styleClass="nav-button" />
+
+                <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS" spacing="10.0">
+                    <Button mnemonicParsing="false" onAction="#handleLogout" text="Çıkış Yap" styleClass="exit-button" />
+                    <Button mnemonicParsing="false" onAction="#handleExit" text="Uygulamayı Kapat" styleClass="exit-button" />
+                </HBox>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <AnchorPane fx:id="contentArea" BorderPane.alignment="CENTER" id="content-background">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </AnchorPane>
+    </center>
+</BorderPane>

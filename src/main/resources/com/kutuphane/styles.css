@@ -1,0 +1,131 @@
+/* styles.css - KÜTÜPHANE PROFESYONEL TEMASI (YENİ YAPI) */
+
+/* ------------------ GLOBAL STYLES ------------------ */
+.root {
+    -fx-font-family: "Calibri", "Verdana", sans-serif;
+    -fx-base: #e0e0e0;
+    -fx-background-color: #FAFAFA;
+}
+.anchor-pane {
+    -fx-background-color: transparent;
+}
+#content-background {
+    -fx-background-color: #FAFAFA;
+}
+
+/* ------------------ TOP BAR (HEADER & NAVBAR) ------------------ */
+.top-menu-container {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 15, 0.5, 0, 4);
+}
+.top-bar {
+    -fx-background-color: #003366; /* Derin Mavi */
+    -fx-padding: 15px;
+}
+.top-bar .label {
+    -fx-text-fill: white;
+    -fx-font-size: 22pt;
+    -fx-font-weight: 800;
+}
+#lblUserInfo {
+    -fx-font-size: 11pt;
+    -fx-text-fill: white;
+}
+
+/* YATAY NAVİGASYON (NAVBAR) */
+.navbar {
+    -fx-background-color: #F0E6D2; /* Kitaplık Beji */
+}
+.navbar-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #003366;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+    -fx-effect: none;
+    -fx-transition: background-color 0.2s;
+}
+.nav-button:hover {
+    -fx-background-color: #E0D0B5;
+    -fx-scale-x: 1.0;
+}
+
+/* ------------------ BUTTONS & FORM STYLES ------------------ */
+.button {
+    -fx-background-color: #0056b3;
+    -fx-text-fill: white;
+    -fx-font-size: 11pt;
+    -fx-padding: 10px 15px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 5, 0.3, 0, 1);
+    -fx-transition: all 0.3s ease-in-out;
+}
+.button:hover {
+    -fx-background-color: #007bff;
+    -fx-scale-x: 1.03;
+}
+.add-button {
+    -fx-background-color: #28a745;
+}
+.add-button:hover {
+    -fx-background-color: #218838;
+}
+.exit-button {
+    -fx-background-color: #dc3545;
+}
+.exit-button:hover {
+    -fx-background-color: #c82333;
+}
+.button:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #cccccc;
+    -fx-scale-x: 1.0;
+}
+
+/* ------------------ CARD VIEW STYLES ------------------ */
+.form-container {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0.2, 0, 2);
+}
+.card-view-pane {
+    -fx-background-color: transparent;
+}
+.book-card {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 8px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.3, 0, 1);
+    -fx-font-weight: bold;
+    -fx-text-fill: #003366;
+    -fx-alignment: TOP_LEFT;
+}
+.book-card:hover {
+    -fx-border-color: #007bff;
+    -fx-cursor: hand;
+}
+
+/* ------------------ LOGIN STYLES ------------------ */
+.login-root {
+    -fx-background-color: linear-gradient(to bottom right, #F0E6D2, #ffffff);
+}
+.login-pane {
+    -fx-background-color: white;
+    -fx-border-radius: 15px;
+    -fx-padding: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 20, 0.4, 0, 4);
+}
+.login-header {
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+    -fx-text-fill: #003366;
+    -fx-padding: 0 0 15px 0;
+}

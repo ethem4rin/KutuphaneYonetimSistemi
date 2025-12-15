@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kutuphane.controller.LoanController">
+    <children>
+        <VBox spacing="15.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <Label text="Ödünç ve İade İşlemleri" style="-fx-font-weight: bold; -fx-font-size: 18;" />
+
+                <VBox spacing="10.0" styleClass="form-container">
+                    <Label text="İşlem Formu" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+
+                    <HBox spacing="10.0">
+                        <Label text="Üye Seçin:" style="-fx-font-weight: bold;" />
+                        <ComboBox fx:id="cmbUser" prefWidth="250.0" promptText="Üye Seçiniz" />
+
+                        <Label text="Kitap Seçin:" style="-fx-font-weight: bold;">
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="cmbBook" prefWidth="250.0" promptText="Kitap Seçiniz" />
+                    </HBox>
+
+                    <HBox spacing="10.0" alignment="CENTER_LEFT">
+                        <Label text="İade Tarihi:" style="-fx-font-weight: bold;" />
+                        <DatePicker fx:id="datePickerDueDate" promptText="İade Tarihi" />
+
+                        <Button mnemonicParsing="false" text="Ödünç Ver" onAction="#handleLoanBook" styleClass="add-button">
+                            <HBox.margin><Insets left="30.0" /></HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" text="İade Al" onAction="#handleReturnBook" />
+                    </HBox>
+
+                </VBox>
+
+                <VBox VBox.vgrow="ALWAYS" spacing="10.0" styleClass="form-container">
+                    <Label text="Aktif Ödünç Listesi / Gecikmeler" style="-fx-font-weight: bold; -fx-font-size: 14;" />
+                    <TableView fx:id="loanTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="loanIdColumn" text="ID" prefWidth="50.0" />
+                            <TableColumn fx:id="bookIdColumn" text="Kitap ID" prefWidth="80.0" />
+                            <TableColumn fx:id="userIdColumn" text="Üye ID" prefWidth="80.0" />
+                            <TableColumn fx:id="loanDateColumn" text="Ödünç Tarihi" prefWidth="120.0" />
+                            <TableColumn fx:id="dueDateColumn" text="İade Tarihi" prefWidth="120.0" />
+                            <TableColumn fx:id="returnDateColumn" text="İade Edilen" prefWidth="120.0" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

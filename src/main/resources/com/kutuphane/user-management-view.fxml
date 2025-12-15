@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.PasswordField?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.kutuphane.controller.UserController">
+    <children>
+        <VBox spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <children>
+                <Label text="Kullanıcı Yönetimi (Üye/Personel)" style="-fx-font-weight: bold; -fx-font-size: 18;" />
+
+                <VBox spacing="5.0" style="-fx-border-color: #cccccc; -fx-padding: 10;">
+                    <Label text="Kullanıcı Bilgileri" style="-fx-font-weight: bold;" />
+
+                    <HBox spacing="10.0">
+                        <TextField fx:id="txtUsername" promptText="Kullanıcı Adı" prefWidth="200.0" />
+                        <TextField fx:id="txtFullName" promptText="Ad Soyad" prefWidth="250.0" />
+                        <ComboBox fx:id="cmbRole" promptText="Rol Seçin" prefWidth="150.0" />
+                    </HBox>
+
+                    <HBox spacing="10.0">
+                        <PasswordField fx:id="txtPassword" promptText="Şifre" prefWidth="200.0" />
+                    </HBox>
+
+                    <HBox spacing="10.0" alignment="CENTER_LEFT" style="-fx-padding: 5 0 0 0;">
+                        <Button mnemonicParsing="false" text="Ekle" onAction="#handleAddUser" />
+                        <Button mnemonicParsing="false" text="Güncelle" onAction="#handleUpdateUser" />
+                        <Button mnemonicParsing="false" text="Temizle" onAction="#handleClearForm" />
+                    </HBox>
+                </VBox>
+
+                <TableView fx:id="userTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="idColumn" prefWidth="30.0" text="ID" />
+                        <TableColumn fx:id="usernameColumn" prefWidth="120.0" text="Kullanıcı Adı" />
+                        <TableColumn fx:id="fullNameColumn" prefWidth="200.0" text="Ad Soyad" />
+                        <TableColumn fx:id="roleColumn" prefWidth="100.0" text="Rol" />
+                        <TableColumn fx:id="debtColumn" prefWidth="100.0" text="Borç (Üye)" />
+                    </columns>
+                </TableView>
+
+                <Button mnemonicParsing="false" text="Seçileni Sil" onAction="#handleDeleteUser" style="-fx-background-color: #ff6666;" />
+
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

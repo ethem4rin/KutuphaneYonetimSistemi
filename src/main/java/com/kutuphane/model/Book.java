@@ -1,0 +1,48 @@
+package com.kutuphane.model;
+
+public class Book {
+
+    private int id;
+    private String title;
+    private String author;
+    private String isbn;
+    private String publisher;
+    private int year;
+    private int quantity;
+    private String location;
+
+    public Book(int id, String title, String author, String isbn, String publisher, int year, int quantity, String location) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publisher = publisher;
+        this.year = year;
+        this.quantity = quantity;
+        this.location = location;
+    }
+
+    public Book() { }
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public String getTitle() { return title; }
+    public void setTitle(String title) { this.title = title; }
+    public String getAuthor() { return author; }
+    public void setAuthor(String author) { this.author = author; }
+    public String getIsbn() { return isbn; }
+    public void setIsbn(String isbn) { this.isbn = isbn; }
+    public String getPublisher() { return publisher; }
+    public void setPublisher(String publisher) { this.publisher = publisher; }
+    public int getYear() { return year; }
+    public void setYear(int year) { this.year = year; }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
+    public String getLocation() { return location; }
+    public void setLocation(String location) { this.location = location; }
+
+    @Override
+    public String toString() {
+        return title + " (" + author + ")";
+    }
+}
